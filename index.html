@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <titlefirst</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>欢迎光临</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="pic"></div>
+      <div class="text">
+        <p>八戒！如果生活中有什么使你感到快乐，那就去做吧</p>
+        <br />
+        <p>不要管别人说什么</p>
+      </div>
+    </div>
+  </body>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .pic {
+      box-sizing: border-box;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      background: url("./wallpaper.jpg") no-repeat;
+      background-size: cover;
+      animation: fade-away 2.5s linear forwards; //forwards当动画完成后，保持最后一帧的状态
+    }
+    .text {
+      position: absolute;
+      line-height: 55px;
+      color: #fff;
+      font-size: 36px;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      animation: show 2s cubic-bezier(0.74, -0.1, 0.86, 0.83) forwards;
+    }
+
+    @keyframes fade-away {
+      //背景图的明暗度动画
+      30% {
+        filter: brightness(1);
+      }
+      100% {
+        filter: brightness(0);
+      }
+    }
+    @keyframes show {
+      //文字的透明度动画
+      20% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
 </html>
